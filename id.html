@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #img{
+      /* display: flex; */
+      /* justify-content: right;
+      align-content: flex-end; */
+      float: right;
+      width: 150px;
+      height: 200px;
+      /* position: absolute; */
+      margin-top: -200px;
+      margin-right: 20px;
+      
+    }
+    fieldset{
+      width: 40%;
+      /* background-image: url(./asset/back\ global.jpg); */
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    legend{
+      color: orange;
+    }
+    label{
+      /* color: whitesmoke; */
+
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <form action="" id="form1">
+        <fieldset>
+            <legend>ID CARD DETAILS</legend>
+            <LABEL></LABEL>
+            <input id="first" type="text" placeholder="First name">
+            <input id="second" type="text"placeholder="last name"> <br><br>
+            <input id="rollno" type="text" placeholder="roll no">
+            <input id="batch" type="text" placeholder="Batch No"><br><br>
+            <input id="degree" type="text" placeholder="degree and YOP ">
+            <input id="course" type="text" placeholder="course"> <br><br>
+            <input id="mobileno" type="text" placeholder="mobile No">
+            <input id="duration" type="text" placeholder="Duration"> <br><br>
+            <input id="image" type="file" >
+            <input id="reset" type="submit" value="Reset">
+            <input id="submit" type="submit" >
+
+        </fieldset>
+        
+    </form><br><br>
+
+
+    <form>
+      <fieldset>
+        <legend>ID CARD DETAILS</legend>
+          <h1 >Progress Monitoring Solution</h1>
+          <label for="fname">First Name:</label>
+          <label id="fname" >_______________</label>
+          <label for="sname">Second Name:</label>
+          <label id="sname">________________</label> <br><br>
+          <label for="rlno">Roll No:</label>
+          <label id="rlno">_____________________</label>
+          <label for="btn">Batch:</label>
+          <label id="bth">___________________</label><br><br>
+          <label for="degr">Degree:</label>
+          <label id="degr">___________________</label>
+          <label for="coe">Course:</label>
+          <label id="coe" >_________________</label><br><br>
+          <label for="mobile">Mobileno:</label>
+          <label id="mobile">_____________</label>
+          <label for="durat">Duration:</label>
+          <label id="durat">__________________</label><br><br>
+          <img id="img">
+      </fieldset>
+      
+  </form>
+</div>
+ 
+
+<script>
+let form1=document.getElementById("form1")
+    form1.addEventListener("submit",(event)=>{
+      event.preventDefault();
+      first=document.getElementById("first").value;
+      fname=document.getElementById("fname")
+      fname.innerHTML= first;
+      second=document.getElementById("second").value;
+      sname=document.getElementById("sname")
+      sname.innerHTML=second
+      rollno=document.getElementById("rollno").value;
+      rlno=document.getElementById("rlno");
+      rlno.innerHTML=rollno;
+      batch=document.getElementById("batch").value;
+      bth=document.getElementById("bth");
+      bth.innerHTML=batch;
+      degree=document.getElementById("degree").value;
+      degr=document.getElementById("degr");
+      degr.innerHTML=degree;
+      course=document.getElementById("course").value;
+      coe=document.getElementById("coe");
+      coe.innerHTML=course;
+      mobileno=document.getElementById("mobileno").value;
+      mobile=document.getElementById("mobile");
+      mobile.innerHTML=mobileno;
+      duration=document.getElementById("duration").value;
+      durat=document.getElementById("durat")
+      durat.innerHTML=duration;
+      Imageinput=document.getElementById("image");
+      img=document.getElementById("img")
+      img.src=URL.createObjectURL(Imageinput.files[0]);
+
+      
+    }  )
+    form1.addEventListener("Reset",()=>{
+      
+    })
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

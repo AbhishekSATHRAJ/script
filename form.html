@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Form</h2>
+
+<p>Please input a number between 1 and 100:</p>
+
+<input id="numb">
+
+<button type="search" onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+
+
+<script>
+function myFunction() {
+  let x = document.getElementById("numb").value;
+  if (x%2==0) {
+    text = "Input is even number is " +x;
+      document.getElementById("demo").innerHTML =text;
+
+    
+  } else {
+    text = "Input is odd number is " +x;
+          document.getElementById("demo1").innerHTML = text;
+  }
+//   document.getElementById("demo").innerHTML = text;
+
+}
+</script>
+
+</body>
+</html>

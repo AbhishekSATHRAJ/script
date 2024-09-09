@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 10px;
+}
+.container{
+    width: 100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.container input{
+    width: 200px;
+}
+.phones{
+    display: grid;
+    grid-template-columns:auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 10%;
+}
+.phones li{
+    list-style: none;
+}
+.phones img{
+    width: 200px;
+    height: 300px;
+}

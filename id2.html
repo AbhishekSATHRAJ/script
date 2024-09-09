@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script> -->
+</head>
+<style>
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+.container{
+  width: 350px;
+  height:520px;
+  padding: 8px;
+  border-radius: 20px;
+  background-image: url(./asset/Colour\ Gradual\ Background\ Of\ Indian\ Architecture\ Wallpaper\ Image\ For\ Free\ Download\ -\ Pngtree.jfif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* display: none; */
+}
+#national{
+  width: 50px;
+}
+#flag{
+  width: 80px;
+  height: 90px
+}
+#header{
+  display: flex;
+}
+.title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  text-align: center;
+}
+.card{
+  display: flex;
+  justify-content: space-between;
+}
+.cardname{
+  font-size: medium;
+  width: 100%;
+
+}
+#images{
+  width: 150px;
+  height: 200px;
+  margin-left: 100px;
+ 
+}
+#QR{
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  flex-direction: column;
+
+}
+#qrcode{
+  width: 200px;
+  height: 40px;
+  /* border: 1px solid black; */
+}
+#qrcode img {
+  width: 100%;
+  height: 100%;
+}
+.names{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+#names{
+  font-size: medium;
+  padding: 1%;
+}
+#address{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+form{
+  width: 100px;
+}
+/* #toggle:hover ~ .container{
+  display: block;
+
+} */
+
+</style>
+<body>
+  <form >
+    <input type="text" id="electornameInput" placeholder="Enter Elector's Name">
+    <input type="text" id="fathernameInput" placeholder="Enter Father's Name">
+    <input type="text" id="sexInput" placeholder="Enter Sex">
+    <input type="text" id="dobInput" placeholder="Enter Date of Birth">
+    <input id="image" type="file">
+    <input id="toggle" type="submit" >
+  </form>
+
+
+  <div class="container">
+
+  <div id="header">
+    <h1 ><img id="national"src="./asset/national embel.jpg"></h1>
+    <div class="title">
+      <h2 class="title">भारत का चुनाव आयोग</h>
+    <h1 class="title">ELECTION COMMISSION OF INDIA</h1>
+   </div>
+   <h1 ><img id="flag" src="./asset/flag.jpg"></h1>
+  </div>
+  <div class="card">
+    <h1 class="cardname">मतदाता फोटो पहचान पत्र</h1>
+    <h1 class="cardname">ELECTOR PHOTO IDENTITY CARD</h1>
+  </div>
+  <img id="images">
+  <div id="QR">
+    <div id="qrcode"><img src="./asset/barcode-illustration-isolated_23-2150584086.avif"></div>
+    <div id="idnumber"></div>
+  </div>
+  <div id="address">
+    <div class="names">
+      <h1 id="names">ELECTOR'S NAME :</h1>
+      <h1 id="names">FATHER'S NAME : </h1>
+      <h1 id="names">SEX :</h1>
+      <h1 id="names">DATE OF BIRTH :</h1>
+    </div>
+    <div>
+      <h1 id="electorname" style="font-size: medium;"></h1>
+      <h1 id="fathername"  style="font-size: medium;"></h1>
+      <h1 id="sex"   style="font-size: medium;"></h1>
+      <h1 id="dob"  style="font-size: medium;"></h1>
+    </div>
+
+  </div>
+  
+</div>
+
+
+
+<script>
+  document.querySelector('form').addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const electornameInput = document.getElementById('electornameInput').value;
+    document.getElementById('electorname').innerText = electornameInput;
+
+    const fathernameInput = document.getElementById('fathernameInput').value;
+    document.getElementById('fathername').innerText = fathernameInput;
+
+    const sexInput = document.getElementById('sexInput').value;
+    document.getElementById('sex').innerText = sexInput;
+
+    const dobInput = document.getElementById('dobInput').value;
+    document.getElementById('dob').innerText = dobInput;
+
+    const imageInput = document.getElementById('image');
+    const images = document.getElementById('images');
+    if (imageInput.files.length > 0) {
+      images.src = URL.createObjectURL(imageInput.files[0]);
+    }
+
+    document.getElementById('idnumber').innerText = Math.floor(Math.random() * 10000000).toString().padStart(7, '0');
+   
+ 
+ 
+ 
+  });
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
